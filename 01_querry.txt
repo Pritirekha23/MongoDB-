@@ -137,3 +137,57 @@ university> db.students.find()
   }
 ]
 
+
+
+HOW TO GET ALL THE COLLECTION NAMES PRESENT IN A DATABASE:
+----------------------------------------------------------
+LET WE SELECTED university DATABASE
+------------------------------------
+Commands:
+-----------
+university>use university
+university>show collections
+employee
+students
+
+
+select the document of priti
+--------------------------------
+
+university> db.students.find({name:"priti"})
+[
+  {
+    _id: ObjectId('66045618b4d898ccce9f990a'),
+    name: 'priti',
+    age: 21,
+    mark: 75,
+    dept: 'CSE'
+  }
+]
+
+
+collection name :employee
+--------------------------
+select all the employee documets whose salary is greater than 20000:
+--------------------------------------------------------------------
+university> db.employee.find({esal:{$gt:20000}})
+[
+  {
+    _id: ObjectId('660466afb4d898ccce9f990e'),
+    ename: 'Ram',
+    esal: 22000,
+    yoj: 2022
+  }
+]
+
+select all the employee documets whose salary is less than 15000:
+------------------------------------------------------------------
+university> db.employee.find({esal:{$lt:15000}})
+[
+  {
+    _id: ObjectId('660466afb4d898ccce9f990f'),
+    ename: 'Sam',
+    esal: 12000,
+    ypj: 2023
+  }
+]
