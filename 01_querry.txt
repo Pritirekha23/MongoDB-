@@ -168,7 +168,7 @@ university> db.students.find({name:"priti"})
 
 collection name :employee
 --------------------------
-select all the employee documets whose salary is greater than 20000:
+select all the employee documents whose salary is greater than 20000:
 --------------------------------------------------------------------
 university> db.employee.find({esal:{$gt:20000}})
 [
@@ -180,7 +180,7 @@ university> db.employee.find({esal:{$gt:20000}})
   }
 ]
 
-select all the employee documets whose salary is less than 15000:
+select all the employee documents whose salary is less than 15000:
 ------------------------------------------------------------------
 university> db.employee.find({esal:{$lt:15000}})
 [
