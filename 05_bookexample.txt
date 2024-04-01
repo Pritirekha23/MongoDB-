@@ -1,0 +1,160 @@
+
+
+CREATED Book DATABASE :
+-------------------------
+test> use Book
+switched to db Book
+
+CREATED COLLECTION NAMED AS Books:
+-------------------------------------
+Book> db.createCollection("Books")
+{ ok: 1 }
+
+---------------------------------------
+INSERTED DOCUMENTS IN BOOKS COLLECTION
+---------------------------------------
+Book> db.Books.insertMany([
+... {
+... title: "The God of Small Things",
+... Author:"Arundhati Roy",
+... Price:350,
+... PublicationDetails:{
+... year:1997,
+... phouse:"Ar PublicationHouse",
+... address:{
+... city:"Balasore",
+... landmark:"Near Hanuman temple",
+... plot:"A/101",
+... pin:756112
+... }
+... }
+... },
+... {
+... title: "Midnight's Children",
+... Author:" Salman Rushdie",
+... Price:400,
+... PublicationDetails:{
+... year:1981,
+... phouse:"Sa PublicationHouse",
+... address:{
+... city:"khorda",
+... landmark:"Near Rama temple",
+... plot:"B/102",
+... pin:756101
+... }
+... }
+... },
+... {
+...  title: "The White Tiger",
+... Author:["Aravind Adiga","Komal Jha"],
+...  PublicationDetails:{
+... year:2008,
+... phouse:"ArKo Publicationhouse",
+... address:{
+... city:"Cuttack",
+... landmark:"Near Appolo",
+... plot:"C/200",
+... pin:756123
+... }
+... }
+... },
+... {
+... title:"The Palace of Illusions",
+... Author:" Chitra Banerjee Divakaruni",
+... Price:340,
+...  PublicationDetails:{
+... year:2010,
+... phouse:"Ch publocationhouse",
+... address:{
+... city:"Cuttack",
+... landmark:"Near Sai temple",
+... plot:"D/302",
+... pin:756114
+... }
+... }
+... }
+... ]
+... )
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('660a2b2dd6e35833099f990a'),
+    '1': ObjectId('660a2b2dd6e35833099f990b'),
+    '2': ObjectId('660a2b2dd6e35833099f990c'),
+    '3': ObjectId('660a2b2dd6e35833099f990d')
+  }
+}
+
+
+--------------------
+SHOWING DOCUMENTS
+--------------------
+
+Book> db.Books.find()
+[
+  {
+    _id: ObjectId('660a2b2dd6e35833099f990a'),
+    title: 'The God of Small Things',
+    Author: 'Arundhati Roy',
+    Price: 350,
+    PublicationDetails: {
+      year: 1997,
+      phouse: 'Ar PublicationHouse',
+      address: {
+        city: 'Balasore',
+        landmark: 'Near Hanuman temple',
+        plot: 'A/101',
+        pin: 756112
+      }
+    }
+  },
+  {
+    _id: ObjectId('660a2b2dd6e35833099f990b'),
+    title: "Midnight's Children",
+    Author: ' Salman Rushdie',
+    Price: 400,
+    PublicationDetails: {
+      year: 1981,
+      phouse: 'Sa PublicationHouse',
+      address: {
+        city: 'khorda',
+        landmark: 'Near Rama temple',
+        plot: 'B/102',
+        pin: 756101
+      }
+    }
+  },
+  {
+    _id: ObjectId('660a2b2dd6e35833099f990c'),
+    title: 'The White Tiger',
+    Author: [ 'Aravind Adiga', 'Komal Jha' ],
+    PublicationDetails: {
+      year: 2008,
+      phouse: 'ArKo Publicationhouse',
+      address: {
+        city: 'Cuttack',
+        landmark: 'Near Appolo',
+        plot: 'C/200',
+        pin: 756123
+      }
+    }
+  },
+  {
+    _id: ObjectId('660a2b2dd6e35833099f990d'),
+    title: 'The Palace of Illusions',
+    Author: ' Chitra Banerjee Divakaruni',
+    Price: 340,
+    PublicationDetails: {
+      year: 2010,
+      phouse: 'Ch publocationhouse',
+      address: {
+        city: 'Cuttack',
+        landmark: 'Near Sai temple',
+        plot: 'D/302',
+        pin: 756114
+      }
+    }
+  }
+]
+
+

@@ -87,4 +87,30 @@ Roadmap> db.fullstack.find()
 
 
 QUESTIONS:
----------
+----------
+(1) WMQ to get all the Roadmap documents whose year of publish(yop) is greater than 1998.
+
+
+issue
+======
+Roadmap> db.fullstack.find({"skills.yop":{$gt:1998}})
+[
+  {
+    _id: ObjectId('6608686b86652064169f990b'),
+    category: 'Backend',
+    skills: [
+      {
+        name: 'Python',
+        author: 'Guido Van Rossum',
+        yop: 1991,
+        frameworks: [ 'Flask', 'Django' ]
+      },
+      {
+        name: 'Node.js',
+        author: 'Ryan Dahl',
+        yop: 2009,
+        Frameworks: [ 'Express', 'Next,js' ]
+      }
+    ]
+  }
+]
