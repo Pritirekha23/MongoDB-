@@ -145,3 +145,54 @@ Tuition> db.teachers.find()
   }
 ] 
 ```
+
+
+
+## COMPASS:
+### OPERATIONS:
+(1)WMQ to get all the  name documents is greater than 2000.
+``` 
+for cmd: db.Fullstack.find({"yop":{$gt:2000}})
+for compass:{"yop":{$gt:2000}}
+```
+![alt text](Images/01roadmapfullstack.png)
+
+(2)WMQ to get all the  name documents is less than 2000.
+``` 
+for cmd: db.Fullstack.find({"yop":{$lt:2000}})
+for compass:{"yop":{$lt:2000}}
+
+```
+![alt text](Images/02roadmapfullstack.png)
+
+(3)WMQ to get deatils about the language name written by Guido Van Rossum.
+
+``` 
+for cmd: db.Fullstack.find({"author":"Guido Van Rossum"})
+for compass:{"author":"Guido Van Rossum"}
+
+```
+![alt text](Images/03roadmapfullstack.png.png)
+
+(4)WMQ to get all author names.
+
+``` 
+for cmd: db.Fullstack.find({}, { "Author": 1, "_id": 0 })
+for compass:{}
+
+```
+
+
+(5)WMQ to get the versions of SQL.
+
+
+
+(6) WMQ to display all the languages those who have published in between 1994 to 2002.
+``` 
+for cmd: db.Fullstack.find({"yop":{ $gt:1994,$lt:2002}} )
+for compass:  {"yop": { $gt:1994,$lt:2002}}
+```
+![alt text](Images/04roadmapfullstack.png)
+
+
+(9)WMQ to display all the names based on yop.

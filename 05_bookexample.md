@@ -165,7 +165,7 @@ OPERATIONS:
 ---------------------------------------------------------------------------------
 (1)WMQ to get all the book documents whose publication year is greater than 2008.
 ---------------------------------------------------------------------------------
-Ans:
+- Ans:
 ----
 ``` Book> db.Books.find({"PublicationDetails.year":{$gt:2008}})
 [
@@ -230,7 +230,7 @@ Ans:
 
  ```
 --------------------------------------------------------------
-(3)WMQ to get deatils about the book written by Arundhati Roy
+(3)WMQ to get deatils about the book written by Arundhati Roy.
 --------------------------------------------------------------
 Ans:
 ----
@@ -255,7 +255,7 @@ Ans:
 ]
  ```
 ---------------------------------
-(4)WMQ to get all author names
+(4)WMQ to get all author names.
 ---------------------------------
 Ans:
 ----
