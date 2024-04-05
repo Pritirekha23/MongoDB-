@@ -1,0 +1,55 @@
+[
+    {
+        " name": "HTML", 
+        "author": "Tim Berners-Lee", 
+        "yop": 1993 ,
+        "versions": [ "HTML 2.0","HTML 3.2","HTML 4.01","HTML5" ]
+        
+       
+    },
+
+    {
+        " name": "CSS", 
+        "author":[ "Hakon Wium Lie", "Bert Bos" ], 
+        "yop": 1996,
+        "versions": ["CSS1", "CSS2", "CSS2.1", "CSS3"],
+        "frameworks":["Bootstrap","tailwind CSS"]
+        
+    },
+    {
+        "name": "JavaScript", 
+        "author":"Brendan Eich", 
+        "yop": 1995,
+        "versions": ["ECMAScript 1", "ECMAScript 2", "ECMAScript 3", "ECMAScript 5", "ECMAScript 6 (ES2015)", "ECMAScript 7 (ES2016)", "ECMAScript 8 (ES2017)", "ECMAScript 9 (ES2018)", "ECMAScript 10 (ES2019)", "ECMAScript 11 (ES2020)", "ECMAScript 12 (ES2021)"],
+        "frameworks":["React","Angular","Vue.js"]
+    },
+    {
+        "name": "Python",
+        "author": "Guido Van Rossum",
+        "yop": 1991,
+        "versions": ["Python 1.0", "Python 2.0", "Python 2.7", "Python 3.0", "Python 3.9"],
+        "frameworks": [ "Flask", "Django" ]
+      },
+     {
+        "name": "Node.js",
+        "author": "Ryan Dahl",
+        "yop": 2009,
+        "versions": ["Node.js 0.1.0", "Node.js 0.2.0", "Node.js 0.4.0", "Node.js 0.6.0", "Node.js 0.8.0", "Node.js 0.10.0", "Node.js 0.12.0", "Node.js 4.0.0", "Node.js 6.0.0", "Node.js 8.0.0", "Node.js 10.0.0", "Node.js 12.0.0", "Node.js 14.0.0", "Node.js 16.0.0,Node.js 18.00,Node.js 20.0"],
+        "frameworks": [ "Express", "Next,js" ]
+      },
+      {
+        "name": "SQL",
+        "author": [ "Raymond Boyce", "Donald Chamberlain" ],
+        "yop": 1970,
+        "versions": ["SQL-86", "SQL-89", "SQL-92", "SQL:1999 (SQL3)", "SQL:2003", "SQL:2006", "SQL:2008", "SQL:2011", "SQL:2016", "SQL:2019"],
+        "frameworks": [ "MySQL", "PostgresSQL", "SQLite" ]
+      },
+      {
+        "name": "NoSQL",
+        "author": "Carl Strozz",
+        "yop": 1998,
+        "versions": ["MongoDB 1.0", "MongoDB 2.0", "MongoDB 3.0", "MongoDB 4.0", "MongoDB 5.0", "CouchDB 0.10.0", "CouchDB 1.0.0", "CouchDB 2.0.0", "CouchDB 3.0.0", "Firebase 1.0", "Firebase 2.0", "Firebase 3.0", "Firebase 4.0", "Firebase 5.0", "Firebase 6.0"],
+        "frameworks": [ "MongoDB", "FireBase", "CouchDB" ]
+      }
+]
+    

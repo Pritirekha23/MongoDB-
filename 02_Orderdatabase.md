@@ -3,6 +3,7 @@ Note: For reference please visit the ordertablee.pdf
 
 CREATED DATABASE NAMED AS Order THHEN INSERTS  4 documents TO THE COLLECTION NAMED AS Transaction.
 --------------------------------------------------------------------------------------------------- 
+``` 
 test> use Order
 switched to db Order
 
@@ -76,10 +77,11 @@ Order> db.Transaction.insertMany([
     '3': ObjectId('66048303acbff470029f990d')
   }
 }
+```
 
 select document the Transaction whose Tid=58930
 ------------------------------------------------
-Order> db.Transaction.find({Tid:58930})
+``` Order> db.Transaction.find({Tid:58930})
 [
   {
     _id: ObjectId('66048303acbff470029f990d'),
@@ -88,6 +90,6 @@ Order> db.Transaction.find({Tid:58930})
     Customer: { Cid: 24224, Fname: 'Sue', Lname: 'Burton' }
   }
 ]
-
+```
 Select document of the Transaction whose Pid=389
 -------------------------------------------------

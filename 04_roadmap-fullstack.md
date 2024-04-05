@@ -52,16 +52,16 @@ Roadmap> db.fullstack.find()
     category: 'Backend',
     skills: [
       {
-        name: 'Python',
-        author: 'Guido Van Rossum',
-        yop: 1991,
-        frameworks: [ 'Flask', 'Django' ]
+        "name": "Python",
+        "author": "Guido Van Rossum",
+        "yop": 1991,
+        "frameworks": [ "Flask", "Django" ]
       },
       {
-        name: 'Node.js',
-        author: 'Ryan Dahl',
-        yop: 2009,
-        Frameworks: [ 'Express', 'Next,js' ]
+        "name": "Node.js",
+        "author": 'Ryan Dahl',
+        "yop": 2009,
+        "frameworks": [ 'Express', 'Next,js' ]
       }
     ]
   },
@@ -70,16 +70,16 @@ Roadmap> db.fullstack.find()
     category: 'Database',
     skills: [
       {
-        name: 'SQL',
-        author: [ 'Raymond Boyce', 'Donald Chamberlain' ],
-        yop: 1970,
-        frameworks: [ 'MySQL', 'PostgresSQL', 'SQLite' ]
+        "name": "SQL",
+        "author": [ "Raymond Boyce", "Donald Chamberlain" ],
+        "yop": 1970,
+        "frameworks": [ "MySQL", "PostgresSQL", "SQLite" ]
       },
       {
-        name: 'NoSQL',
-        author: 'Carl Strozz',
-        yop: 1998,
-        frameworks: [ 'MongoDB', 'FireBase', 'CouchDB' ]
+        "name": "NoSQL",
+        "author": "Carl Strozz",
+        "yop": 1998,
+        "frameworks": [ "MongoDB", "FireBase", "CouchDB" ]
       }
     ]
   }
