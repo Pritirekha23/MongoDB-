@@ -4,18 +4,19 @@ Date:04/04/2024
 ## Task1 : we will insert documents in mongodb collection through javascript(.js) file.
 
 ### Step:1 : 
-
 Install mongodb import through https://www.mongodb.com/try/download/database-tools .
 
 After installing this :
 - Go to C Drive -->  Program files -->  MongoDB 
 - Here You can see two folders first one is Server and  second one is Tools .
+![alt text](mongo1tools.png)
 - Tools folder came after installing the following.
 
 ### Step:2
 - Go to **Tools** folder --> 100 ---> bin --> mongoimport.exe (Copy this file) 
 - Now go back to **Server** folder --> 7.0 --> bin --> Paste the file you have copied from  _Tools folder_ that is **mongoimport.exe**.
-
+- Now your (Server/7.0/bin)  all this files should present.
+![alt text](mongodbtollls2serverbin.png)
 ### Step:3
 - open 1st cmd and run mongod (_to start mongodb server_)
 - open 2nd cmd and run mongosh (_to start mongodb shell_)
@@ -77,3 +78,9 @@ university> db.employee.find()
 ]
 ```
 - It added the document which is present in employee.js file that is name=priyanka document so previously 3 documents are present in my employee collection.
+
+
+========================================
+
+## Task2 :we will insert documents in mongodb collection through javascript object natation (.json) file.
+
