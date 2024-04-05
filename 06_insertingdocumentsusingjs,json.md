@@ -9,14 +9,14 @@ Install mongodb import through https://www.mongodb.com/try/download/database-too
 After installing this :
 - Go to C Drive -->  Program files -->  MongoDB 
 - Here You can see two folders first one is Server and  second one is Tools .
-![alt text](mongo1tools.png)
+![alt text](Images/mongo1tools.png)
 - Tools folder came after installing the following.
 
 ### Step:2
 - Go to **Tools** folder --> 100 ---> bin --> mongoimport.exe (Copy this file) 
 - Now go back to **Server** folder --> 7.0 --> bin --> Paste the file you have copied from  _Tools folder_ that is **mongoimport.exe**.
 - Now your (Server/7.0/bin)  all this files should present.
-![alt text](mongodbtollls2serverbin.png)
+![alt text](Images/mongodbtollls2serverbin.png)
 ### Step:3
 - open 1st cmd and run mongod (_to start mongodb server_)
 - open 2nd cmd and run mongosh (_to start mongodb shell_)
