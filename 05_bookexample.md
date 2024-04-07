@@ -89,7 +89,7 @@ Book> db.Books.insertMany([
 --------------------
 SHOWING DOCUMENTS
 --------------------
-
+```
 Book> db.Books.find()
 [
   {
@@ -157,7 +157,7 @@ Book> db.Books.find()
   }
 ]
 
-
+```
 ------------
 OPERATIONS:
 ------------
@@ -167,7 +167,8 @@ OPERATIONS:
 ---------------------------------------------------------------------------------
 - Ans:
 ----
-``` Book> db.Books.find({"PublicationDetails.year":{$gt:2008}})
+```
+ Book> db.Books.find({"PublicationDetails.year":{$gt:2008}})
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990d'),
@@ -185,14 +186,16 @@ OPERATIONS:
       }
     }
   }
-]```
+]
+```
 
 ------------------------------------------------------------------------------
 (2)WMQ to get all the book documents whose publication year is less than 2008.
 ------------------------------------------------------------------------------
 Ans:
 ----
-```Book> db.Books.find({"PublicationDetails.year":{$lt:2008}})
+```
+Book> db.Books.find({"PublicationDetails.year":{$lt:2008}})
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990a'),
@@ -234,7 +237,8 @@ Ans:
 --------------------------------------------------------------
 Ans:
 ----
-```Book> db.Books.find({"Author":"Arundhati Roy"})
+```
+Book> db.Books.find({"Author":"Arundhati Roy"})
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990a'),
@@ -253,19 +257,23 @@ Ans:
     }
   }
 ]
- ```
+ 
+```
 ---------------------------------
 (4)WMQ to get all author names.
 ---------------------------------
 Ans:
 ----
-``` Book> db.Books.find({}, { "Author": 1, "_id": 0 })
+``` 
+Book> db.Books.find({}, { "Author": 1, "_id": 0 })
 [
   { Author: 'Arundhati Roy' },
   { Author: ' Salman Rushdie' },
   { Author: [ 'Aravind Adiga', 'Komal Jha' ] },
   { Author: ' Chitra Banerjee Divakaruni' }
-]```
+]
+
+```
 
 
 ----------------------------------------------
@@ -273,18 +281,22 @@ Ans:
 ----------------------------------------------
 Ans:
 ----
-```Book> db.Books.find({},{"PublicationDetails.address.plot":1,"_id":0})
+```
+Book> db.Books.find({},{"PublicationDetails.address.plot":1,"_id":0})
 [
   { PublicationDetails: { address: { plot: 'A/101' } } },
   { PublicationDetails: { address: { plot: 'B/102' } } },
   { PublicationDetails: { address: { plot: 'C/200' } } },
   { PublicationDetails: { address: { plot: 'D/302' } } }
-] ```
+] 
+
+```
 
 
 OR
 ----
-``` Book> db.Books.find({},{"PublicationDetails.address.plot":1})
+```
+ Book> db.Books.find({},{"PublicationDetails.address.plot":1})
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990a'),
@@ -302,11 +314,15 @@ OR
     _id: ObjectId('660a2b2dd6e35833099f990d'),
     PublicationDetails: { address: { plot: 'D/302' } }
   }
-]```
+]
+
+```
 -----------------------------------------------------------------------------
 (6) WMQ to display all book those who have published in between 2000 to 2020.
 -----------------------------------------------------------------------------
-```Book> db.Books.find({"PublicationDetails.year": { $gt:2000,$lt:2020}} )
+```
+
+Book> db.Books.find({"PublicationDetails.year": { $gt:2000,$lt:2020}} )
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990c'),
@@ -339,9 +355,12 @@ OR
       }
     }
   }
-] ```
+] 
+
+```
 ------->    
-```Book> db.Books.find({"PublicationDetails.year": { $gte:2000,$lte:2020}} )
+```
+Book> db.Books.find({"PublicationDetails.year": { $gte:2000,$lte:2020}} )
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990c'),
@@ -374,7 +393,9 @@ OR
       }
     }
   }
-] ```
+] 
+
+```
 
 ---------------------------------------------
 QUESTION FOR THE ABOVE QUERY (OPERATION(6))
@@ -410,7 +431,8 @@ Note:  1 means ascending order and -1 means (descending order).
 ===================================================================
 Ans:
 ----
-``` Book> db.Books.find().sort({"PublicationDetails.Price": 1})
+``` 
+Book> db.Books.find().sort({"PublicationDetails.Price": 1})
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990a'),
@@ -482,7 +504,8 @@ Ans:
 ------------------------------------------------------------------------------------
 Ans:
 ----
-``` Book> db.Books.find().sort({"PublicationDetails.year": -1})
+```
+ Book> db.Books.find().sort({"PublicationDetails.year": -1})
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990d'),
@@ -547,7 +570,8 @@ Ans:
       }
     }
   }
-]```
+]
+```
 
 -----------------------------------------------------------------------------------
 (10) WMQ to display all the author names started with 'A'
@@ -567,7 +591,8 @@ Ans:
 ---------------------------------------------
 Ans:
 ----
-``` Book> db.Books.find().skip(3)
+``` 
+Book> db.Books.find().skip(3)
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990d'),
@@ -585,18 +610,20 @@ Ans:
       }
     }
   }
-]```
+]
+```
 
 
 
 
 
 ---------------------------------------------
-(12)WMQ wgtgo show first 2 documents.
+(12)WMQ to  show first 2 documents.
 ---------------------------------------------
 Ans:
 ----
-```  Book> db.Books.find().limit(2)
+``` 
+ Book> db.Books.find().limit(2)
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990a'),
@@ -638,7 +665,8 @@ pretty() Method in MongoDB:
 
 The pretty() method in MongoDB is used to display query results in a more readable format. It formats the output with indentation and additional white space, making it easier to read, especially for complex documents.
 
-```Book> db.Books.find().pretty()
+```
+Book> db.Books.find().pretty()
 [
   {
     _id: ObjectId('660a2b2dd6e35833099f990a'),
@@ -705,4 +733,4 @@ The pretty() method in MongoDB is used to display query results in a more readab
   }
 ]
 
- ```
+```
