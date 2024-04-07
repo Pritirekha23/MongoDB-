@@ -13,7 +13,8 @@ Book> db.createCollection("Books")
 ---------------------------------------
 INSERTED DOCUMENTS IN BOOKS COLLECTION
 ---------------------------------------
-Book> db.Books.insertMany([
+```
+ Book> db.Books.insertMany([
 ... {
 ... title: "The God of Small Things",
 ... Author:"Arundhati Roy",
@@ -84,6 +85,7 @@ Book> db.Books.insertMany([
     '3': ObjectId('660a2b2dd6e35833099f990d')
   }
 }
+```
 
 
 --------------------
