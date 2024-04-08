@@ -192,3 +192,78 @@ university> db.Books.find({"price":{$gt:400,$lt:500}})
 ]
 ```
 
+> _(6)WMQ display all the book whose price is in between 200 to 400  or is_avaiable false._
+
+```
+university> db.Books.find({$or:[{"price" : {$gt:200, $lt:400}},{"is_available":false}]})
+[
+  {
+    _id: ObjectId('66136e16fe8d7f68a97644d0'),
+    title: 'Bhagavad Gita',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 200,
+    price: 350,
+    is_available: false,
+    details: { pages: 856, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Philosophy', 'Spirituality' ],
+    description: null,
+    weight_kg: Decimal128('0.3')
+  },
+  {
+    _id: ObjectId('66136e16fe8d7f68a97644d2'),
+    title: 'Upanishads',
+    author: 'Various',
+    language: 'Sanskrit',
+    publication_year: 100,
+    price: 300,
+    is_available: true,
+    details: { pages: 500, publisher: 'Vedanta Publications' },
+    tags: [ 'Hinduism', 'Philosophy', 'Spirituality' ],
+    description: null,
+    weight_kg: Decimal128('0.8')
+  },
+  {
+    _id: ObjectId('66136e16fe8d7f68a97644d4'),
+    title: 'Yoga Sutras',
+    author: 'Patanjali',
+    language: 'Sanskrit',
+    publication_year: 150,
+    price: 250,
+    is_available: false,
+    details: { pages: 200, publisher: 'Yoga Wisdom Books' },
+    tags: [ 'Hinduism', 'Yoga', 'Philosophy' ],
+    description: 'An ancient Indian text on the practice of yoga and meditation.',
+    edition: '3rd Edition',
+    weight_kg: Decimal128('0.2')
+  }
+]
+```
+> CONSIDER DATA production.json.
+
+> _(1) 
+WMQ to dispaly all the products whose rating is greater than 4 and price is in between 400 to 700._
+
+``` 
+Order> db.production.find({"rating":{$gt:4}, "price":{$gt:400,$lt:2000}})
+or
+Order> db.production.find({$and:[{"rating":{$gt:4}},{"price":{$gt:400,$lt:2000}}]})
+[
+  {
+    _id: ObjectId('661374e0fe8d7f68a97644db'),
+    name: 'Yoga Mat',
+    description: 'Premium-quality yoga mat for daily practice and meditation',
+    category: 'Fitness',
+    price: 1200,
+    rating: 4.8
+  },
+  {
+    _id: ObjectId('661374e0fe8d7f68a97644df'),
+    name: 'Ganesh Idol',
+    description: 'Handcrafted Ganesh idol for religious ceremonies and home decor',
+    category: 'Home Decor',
+    price: 500,
+    rating: 4.6
+  }
+]
+```

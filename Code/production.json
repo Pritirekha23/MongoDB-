@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Kanjivaram Silk Saree",
+        "description": "Luxurious handwoven silk saree from Kanjivaram, Tamil Nadu",
+        "category": "Fashion",
+        "price": 15000,
+        "rating": 4.9
+    },
+    {
+        "name": "Sambar Powder",
+        "description": "Authentic South Indian spice blend for preparing delicious sambar",
+        "category": "Food & Beverages",
+        "price": 200,
+        "rating": 4.6
+    },
+    {
+        "name": "Badminton Racket",
+        "description": "Professional-grade badminton racket for indoor sports",
+        "category": "Sports",
+        "price": 2500,
+        "rating": 4.3
+    },
+    {
+        "name": "Kashmiri Pashmina Shawl",
+        "description": "Exquisite handcrafted shawl made from fine Pashmina wool",
+        "category": "Fashion",
+        "price": 8000,
+        "rating": 4.7
+    },
+    {
+        "name": "Biryani Masala Mix",
+        "description": "Ready-to-use spice mix for preparing aromatic biryani",
+        "category": "Food & Beverages",
+        "price": 150,
+        "rating": 4.5
+    },
+    {
+        "name": "Yoga Mat",
+        "description": "Premium-quality yoga mat for daily practice and meditation",
+        "category": "Fitness",
+        "price": 1200,
+        "rating": 4.8
+    },
+    {
+        "name": "Gold Necklace",
+        "description": "Elegant gold necklace with traditional Indian design",
+        "category": "Jewelry",
+        "price": 30000,
+        "rating": 4.9
+    },
+    {
+        "name": "Mysore Sandal Soap",
+        "description": "Famous sandalwood soap from Mysore, Karnataka",
+        "category": "Beauty & Personal Care",
+        "price": 50,
+        "rating": 4.2
+    },
+    {
+        "name": "Cricket Ball",
+        "description": "Durable leather cricket ball for matches and practice",
+        "category": "Sports",
+        "price": 300,
+        "rating": 4.4
+    },
+    {
+        "name": "Ganesh Idol",
+        "description": "Handcrafted Ganesh idol for religious ceremonies and home decor",
+        "category": "Home Decor",
+        "price": 500,
+        "rating": 4.6
+    }
+]
