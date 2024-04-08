@@ -1,0 +1,1026 @@
+path setting :
+--------------
+C:\Program Files\MongoDB\Server\7.0\bin\
+
+open cmd : 
+---------
+check version : mongod -version 
+
+type : mongod
+
+
+"error":"NonExistentPath: Data directory C:\\data\\db\\ not found
+
+
+show databases
+-----------------
+show dbs
+admin   48.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+
+create database 
+----------------
+use databasename  
+Note : It is used to use the database and if it is not created then create it.
+
+
+use university
+switched to db university
+
+
+create collection 
+------------------
+db.createCollection("collection_name")
+
+
+db.createCollection("students")
+{ ok: 1 }
+
+
+
+insert document
+---------------
+
+insert single document 
+-----------------------
+db.students.insertOne(
+... {
+... name:"priyanka",
+... age:25,
+... mark:75,
+... dept:"CSE"
+... }
+... )
+{
+  acknowledged: true,
+  insertedId: ObjectId('660455d83209c6a9bc9f990a')
+}
+
+
+
+select all documents 
+--------------------
+db.students.find()
+
+ db.students.find()
+[
+  {
+    _id: ObjectId('660455d83209c6a9bc9f990a'),
+    name: 'priyanka',
+    age: 25,
+    mark: 75,
+    dept: 'CSE'
+  }
+
+
+insert multiple documet
+-------------------------
+
+
+db.students.insertMany([{name:"rahul",age:25,dept:"ECE"}},{name:"rahul",age:25,dept:"ECE"},{name:"rahul",age:25,dept:"ECE"},{name:"rahul"}])
+
+
+db.students.find()
+
+
+
+select specific document
+-------------------------
+SELECT * FROM STUDENT WHERE NAME="SURENDRA"
+
+select the document of surendra
+---------------------------------
+db.students.find({name:"surendra"})
+
+select the document of surendra whose sid is 102423
+----------------------------------------------------
+db.students.find({sid:102423})
+
+select all the employee documets whose sal is greater than 75000
+-----------------------------------------------------------------
+db.students.find({sal:{ $gt : 75000 }})
+
+select all the employee documets whose sal is greater than 15000
+-----------------------------------------------------------------
+db.students.find({sal:{ $lt : 15000 }})
+
+
+
+drop collection 
+---------------
+db.collectionname.drop()
+
+db.students.drop()
+
+drop database
+-------------
+db.dropDatabase()
+
+
+
+Date : 30/03/2024
+-----------------
+Start mongodb : open cmd ---> mongod
+MongoDB Shell : mongosh
+
+database---> database
+table ----> collection
+record ----> document 
+
+How to insert document 
+----------------------
+insertOne() : used to insert single document
+insertMany() : used to insert multiple document
+insert() : used to insert either single or multiple document ---> outdated
+
+db.employee.insertOne({.........})
+db.employee.insertOne({.........},{........},{.........},{..........})
+
+-------------------------
+
+
+
+Insert Studenet document 
+--------------------------
+db.createCollection("Student")
+
+
+let std={
+	name : "surendra",
+        mark : 75,
+        email : "surendra@gmail.com"
+}
+
+db.Student.insertOne(std)
+
+
+db.createCollection("Student1")
+
+db.Student.insertOne(std)
+
+---------------------------------
+
+
+Insert Multiple Document 
+------------------------
+
+let StudentData = [
+
+	{
+		
+	},
+
+	{
+		
+	},
+
+	{
+
+	}
+
+]
+
+db.Student.insertMany([StudentData])
+
+
+----------------------
+
+let StudentData = { }
+
+StudentData.name="Priyanka"
+StudentData.age=24
+StudentData.mark=75
+StudentData.email="priyanka@gmail.com"
+
+same as 
+
+let StudentData = {
+	name : "priyanka",
+        age : 24,
+        mark : 75,
+	email : "priyanka@gmail.com"	
+}
+
+
+db.student.insertOne(StudentData)
+
+------------------------------------------------------------------------------
+
+
+
+
+
+-------------
+BOOK Example 
+-------------
+db.createCollection(Book)
+
+db.book.insertMany([
+
+{
+ "title" : "How to become a good boy",
+ "author" : "Prangya",
+ "price" : 255,
+ "publicationDetails": {
+	"year" : 2023,
+        "house" : "s. Chand",
+        "address" : {
+		"city" : "Chenni",
+                 "Landmark" : "Near sai temple",
+		 "Plot" : "A/101",
+                 "Pin :  751002
+		}
+	}
+},
+
+{
+ "title" : "How to become a good girl",
+ "author" : "Rahul",
+ "price" : 263,
+ "publicationDetails": {
+	"year" : 2022,
+        "house" : "s. Chand",
+        "address" : {
+		"city" : "Chenni",
+                 "Landmark" : "Near sai temple",
+		 "Plot" : "A/101",
+                 "Pin :  751002
+		}
+	}
+},
+
+{
+ "title" : "How to become a good sports man",
+ "author" : "Zini",
+ "price" : 415,
+ "publicationDetails": {
+	"year" : 2021,
+        "house" : "s. Chand",
+        "address" : {
+		"city" : "Chenni",
+                 "Landmark" : "Near sai temple",
+		 "Plot" : "A/101",
+                 "Pin :  751002
+		}
+	}
+},
+
+
+]);
+
+
+
+Retrive document :
+------------------
+find() ---> to select multiple documenmt
+findOne() --> to select one document
+
+
+-> WMQ to get all documents
+
+db.book.find()
+
+-> WMQ to get all the book documnets whose pub year geater than 2022
+
+db.book.find({"publicationDetails.year":{ $gt: 2022 }});
+ 
+-> WMQ to get deatils about the book written by rahul 
+
+db.book.find({"author": "rahul"});
+
+
+--> WMQ to get all author names 
+
+db.book.find("author")
+
+--> WMQ to get plot number of all the document
+
+db.book.find("publicationDetails.address.plot")
+
+--> WMQ to display all book those who habe published in between 2018 to 2022.
+
+db.book.find({"publicationDetails.year" : { $gt:2018, $lt:2022}})
+
+--> WMQ to display all book those who habe published in between 2018(included) to 2022(include).
+
+db.book.find({"publicationDetails.year" : { $gte:2018, $lte:2022}})
+
+
+--> WMQ to count number of book.
+
+db.book.find().count()
+
+--> WMQ to display all the book based on publishcation year. (accessing order)
+
+db.books.find().sort({ "publication_year": 1 })
+
+1 --> means accessing 
+-1 ---> decessing
+
+--> WMQ to display all the author names started with 's'
+
+db.book.find({"author" : /^s/ })
+
+
+
+db.book.find().skip(5)
+
+-----------------------------
+
+
+
+
+Date : 04/04/2024
+------------------
+
+************************************************************************************
+Task : we will insert documents in mongodb collection through javascript(.js) file.
+************************************************************************************
+
+create javascript file in any loaction (G:\Language\FULL STACK PYTHON DJANGO DRF\MongoDB 7.0\employee.js)
+
+
+
+employee.js
+-------------
+// javascript object creation
+let emp={};
+
+//adding attributes to emp object
+emp.name="Priyanka";
+emp.age=24;
+emp.company="HP";
+emp.sal=75000;
+
+db.employee.insertOne(emp)
+
+
+cmd--> mongod ---> start mongodb server
+cmd--> mongosh ---> start mongodb shell 
+
+
+
+Go to mongodb shell
+--------------------
+load("G:\\Language\\FULL STACK PYTHON DJANGO DRF\\MongoDB 7.0\\employee.js")
+
+After execution of this command then it will create a collection with "employee" name inside currect working database.
+
+
+
+
+******************************************************************************************************
+Task : we will insert documents in mongodb collection through javascript object natation (.json) file.
+******************************************************************************************************
+
+create jsoon file in any loaction (G:\Language\FULL STACK PYTHON DJANGO DRF\MongoDB 7.0\faculty.json)
+
+
+js objcet vs python dict object vs json
+----------------------------------------
+
+
+download mongo db tools
+next copy mongoimport .ext inside server/bin 
+
+
+employee.json
+------------
+
+[
+{
+    "name":"surendra",
+    "domain":"AI and DSA",
+    "exp":5
+},
+{
+    "name":"priaynka",
+    "domain":"Biology",
+    "exp":2
+},
+{
+    "name":"Zini",
+    "domain":"Chemistry",
+    "exp":3
+},
+{
+    "name":"Jack",
+    "domain":"Math",
+    "exp":4
+}
+]
+
+open cmd ---> go to employee.json folder 
+
+
+C:\Users\USER>g:
+
+G:\>cd Language
+
+G:\Language>cd "FULL STACK PYTHON DJANGO DRF"
+
+G:\Language\FULL STACK PYTHON DJANGO DRF>cd "MongoDB 7.0"
+
+G:\Language\FULL STACK PYTHON DJANGO DRF\MongoDB 7.0>mongoimport --db college --collection faculty --file faculty.json --jsonArray
+2024-04-04T22:52:52.328+0530    connected to: mongodb://localhost/
+2024-04-04T22:52:52.384+0530    3 document(s) imported successfully. 0 document(s) failed to import.
+
+
+
+
+*************************
+MongoDB Compass
+*************************
+serach mongodbcompass 
+
+
+
+Task : Create a new database and collection in mongodb compass, add cricket/shop/movies(must be nested)
+
+find : 10 mongodb query 
+
+
+Date : 07/04/2024
+*****************
+Operators 
+---------
+Relational/Comparison Operators
+-------------------------------
+$lt
+$gt
+$lte
+$gte
+$eq
+$ne
+
+2 more special Operators
+------------------------
+$in
+$nin
+
+use this JOSN data 
+------------------
+books.json
+------------
+[
+    {
+        "title": "Bhagavad Gita",
+        "author": "Vyasa",
+        "language": "Sanskrit",
+        "publication_year": 200,
+        "price": 350,
+        "is_available": true,
+        "details": {
+            "pages": 856,
+            "publisher": "GITA Press"
+        },
+        "tags": ["Hinduism", "Philosophy", "Spirituality"],
+        "description": null,
+        
+        "weight_kg": {"$numberDecimal": "0.3"}
+    },
+    {
+        "title": "Mahabharata",
+        "author": "Vyasa",
+        "language": "Sanskrit",
+        "publication_year": 400,
+        "price": 450,
+        "is_available": true,
+        "details": {
+            "pages": 2000,
+            "publisher": "GITA Press"
+        },
+        "tags": ["Hinduism", "Epic", "Mythology"],
+        "description": "An ancient Indian epic depicting the Kurukshetra War and the teachings of Krishna to Arjuna.",
+        "edition": "1st Edition",
+        "weight_kg": {"$numberDecimal": "1.5"}
+    },
+    {
+        "title": "Upanishads",
+        "author": "Various",
+        "language": "Sanskrit",
+        "publication_year": 100,
+        "price": 300,
+        "is_available": true,
+        "details": {
+            "pages": 500,
+            "publisher": "GITA Press"
+        },
+        "tags": ["Hinduism", "Philosophy", "Spirituality"],
+        "description": null,
+        
+        "weight_kg": {"$numberDecimal": "0.8"}
+    },
+    {
+        "title": "Ramayana",
+        "author": "Valmiki",
+        "language": "Sanskrit",
+        "publication_year": 300,
+        "price": 400,
+        "is_available": true,
+        "details": {
+            "pages": 1200,
+            "publisher": "GITA Press"
+        },
+        "tags": ["Hinduism", "Epic", "Mythology"],
+        "description": "A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.",
+        "edition": "2nd Edition",
+        "weight_kg": {"$numberDecimal": "1.2"}
+    },
+    {
+        "title": "Yoga Sutras",
+        "author": "Patanjali",
+        "language": "Sanskrit",
+        "publication_year": 150,
+        "price": 250,
+        "is_available": true,
+        "details": {
+            "pages": 200,
+            "publisher": "GITA Press"
+        },
+        "tags": ["Hinduism", "Yoga", "Philosophy"],
+        "description": "An ancient Indian text on the practice of yoga and meditation.",
+        "edition": "3rd Edition",
+        "weight_kg": {"$numberDecimal": "0.2"}
+    }
+    
+]
+
+WMQ to display all the book whose number of pages is more than or equals to 1000
+
+db.books.find({"details.pages":{$gte:1000}})
+[
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a0'),        
+    title: 'Mahabharata',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 400,
+    price: 450,
+    is_available: true,
+    details: { pages: 2000, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'An ancient Indian epic depicting the Kurukshetra War and the teachings of Krishna to Arjuna.',
+    edition: '1st Edition',
+    weight_kg: Decimal128('1.5')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a2'),
+    title: 'Ramayana',
+    author: 'Valmiki',
+    language: 'Sanskrit',
+    publication_year: 300,
+    price: 400,
+    is_available: true,
+    details: { pages: 1200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.',
+    edition: '2nd Edition',
+    weight_kg: Decimal128('1.2')
+  }
+]
+
+
+WMQ to display all the book whose edition is 2nd Edition
+
+db.books.find({"edition":{$eq:'2nd Edition'}})
+[
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a2'),
+    title: 'Ramayana',
+    author: 'Valmiki',
+    language: 'Sanskrit',
+    publication_year: 300,
+    price: 400,
+    is_available: true,
+    details: { pages: 1200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.',
+    edition: '2nd Edition',
+    weight_kg: Decimal128('1.2')
+  }
+]
+
+WMQ display all the books whose author is Valmiki
+
+db.books.find({"author":{$eq:'Valmiki'}})
+[  
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a2'),
+    title: 'Ramayana',
+    author: 'Valmiki',
+    language: 'Sanskrit',
+    publication_year: 300,
+    price: 400,
+    is_available: true,
+    details: { pages: 1200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.',
+    edition: '2nd Edition',
+    weight_kg: Decimal128('1.2')
+  }
+]
+
+
+WMQ display all the records whose tags is "Mythology" or "Yoga" or "Epic".
+
+db.books.find({"tags":{$in:['Mythology','Yoga','Epic']}})
+[  
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a0'),
+    title: 'Mahabharata',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 400,
+    price: 450,
+    is_available: true,
+    details: { pages: 2000, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'An ancient Indian epic depicting the Kurukshetra War and the teachings of Krishna to Arjuna.',
+    edition: '1st Edition',
+    weight_kg: Decimal128('1.5')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a2'),
+    title: 'Ramayana',
+    author: 'Valmiki',
+    language: 'Sanskrit',
+    publication_year: 300,
+    price: 400,
+    is_available: true,
+    details: { pages: 1200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.',
+    edition: '2nd Edition',
+    weight_kg: Decimal128('1.2')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a3'),
+    title: 'Yoga Sutras',
+    author: 'Patanjali',
+    language: 'Sanskrit',
+    publication_year: 150,
+    price: 250,
+    is_available: true,
+    details: { pages: 200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Yoga', 'Philosophy' ],
+    description: 'An ancient Indian text on the practice of yoga and meditation.',
+    edition: '3rd Edition',
+    weight_kg: Decimal128('0.2')
+  }
+]
+
+
+
+WMQ display all the records whose tags is not "Mythology" or "Hinduism"
+
+db.books.find({"tags":{$nin:['Mythology','Epic']}})
+[
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa19f'),
+    title: 'Bhagavad Gita',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 200,
+    price: 350,
+    is_available: true,
+    details: { pages: 856, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Philosophy', 'Spirituality' ],
+    description: null,
+    weight_kg: Decimal128('0.3')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a1'),
+    title: 'Upanishads',
+    author: 'Various',
+    language: 'Sanskrit',
+    publication_year: 100,
+    price: 300,
+    is_available: true,
+    details: { pages: 500, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Philosophy', 'Spirituality' ],
+    description: null,
+    weight_kg: Decimal128('0.8')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a3'),
+    title: 'Yoga Sutras',
+    author: 'Patanjali',
+    language: 'Sanskrit',
+    publication_year: 150,
+    price: 250,
+    is_available: true,
+    details: { pages: 200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Yoga', 'Philosophy' ],
+    description: 'An ancient Indian text on the practice of yoga and meditation.',
+    edition: '3rd Edition',
+    weight_kg: Decimal128('0.2')
+  }
+]
+
+
+
+Logical Operators 
+------------------
+It is used to combine Relational or Comparison operator.
+$and
+$or
+$not 
+$nor
+
+WMQ to display all books whose price is in between 300 to 500.
+
+db.books.find({$and:[{"price" : {$gt:300}},{"price" : {$gt:500}}]})
+[  
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa19f'),
+    title: 'Bhagavad Gita',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 200,
+    price: 350,
+    is_available: true,
+    details: { pages: 856, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Philosophy', 'Spirituality' ],
+    description: null,
+    weight_kg: Decimal128('0.3')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a0'),
+    title: 'Mahabharata',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 400,
+    price: 450,
+    is_available: true,
+    details: { pages: 2000, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'An ancient Indian epic depicting the Kurukshetra War and the teachings of Krishna to Arjuna.',
+    edition: '1st Edition',
+    weight_kg: Decimal128('1.5')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a2'),
+    title: 'Ramayana',
+    author: 'Valmiki',
+    language: 'Sanskrit',
+    publication_year: 300,
+    price: 400,
+    is_available: true,
+    details: { pages: 1200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.',
+    edition: '2nd Edition',
+    weight_kg: Decimal128('1.2')
+  }
+]
+
+
+
+
+
+db.books.find({"price" : { $gt : 300, $lt :500 }})
+[
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa19f'),
+    title: 'Bhagavad Gita',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 200,
+    price: 350,
+    is_available: true,
+    details: { pages: 856, publisher: 'GITA Press' },  
+    tags: [ 'Hinduism', 'Philosophy', 'Spirituality' ],
+    description: null,
+    weight_kg: Decimal128('0.3')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a0'),
+    title: 'Mahabharata',
+    author: 'Vyasa',
+    language: 'Sanskrit',
+    publication_year: 400,
+    price: 450,
+    is_available: true,
+    details: { pages: 2000, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'An ancient Indian epic depicting the Kurukshetra War and the teachings of Krishna to Arjuna.',
+    edition: '1st Edition',
+    weight_kg: Decimal128('1.5')
+  },
+  {
+    _id: ObjectId('6611fd296613c1c9be9fa1a2'),
+    title: 'Ramayana',
+    author: 'Valmiki',
+    language: 'Sanskrit',
+    publication_year: 300,
+    price: 400,
+    is_available: true,
+    details: { pages: 1200, publisher: 'GITA Press' },
+    tags: [ 'Hinduism', 'Epic', 'Mythology' ],
+    description: 'A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.',
+    edition: '2nd Edition',
+    weight_kg: Decimal128('1.2')
+  }
+]
+
+
+
+Conside this data 
+
+products.json
+----------------
+[
+    {
+        "name": "Kanjivaram Silk Saree",
+        "description": "Luxurious handwoven silk saree from Kanjivaram, Tamil Nadu",
+        "category": "Fashion",
+        "price": 15000,
+        "rating": 4.9
+    },
+    {
+        "name": "Sambar Powder",
+        "description": "Authentic South Indian spice blend for preparing delicious sambar",
+        "category": "Food & Beverages",
+        "price": 200,
+        "rating": 4.6
+    },
+    {
+        "name": "Badminton Racket",
+        "description": "Professional-grade badminton racket for indoor sports",
+        "category": "Sports",
+        "price": 2500,
+        "rating": 4.3
+    },
+    {
+        "name": "Kashmiri Pashmina Shawl",
+        "description": "Exquisite handcrafted shawl made from fine Pashmina wool",
+        "category": "Fashion",
+        "price": 8000,
+        "rating": 4.7
+    },
+    {
+        "name": "Biryani Masala Mix",
+        "description": "Ready-to-use spice mix for preparing aromatic biryani",
+        "category": "Food & Beverages",
+        "price": 150,
+        "rating": 4.5
+    },
+    {
+        "name": "Yoga Mat",
+        "description": "Premium-quality yoga mat for daily practice and meditation",
+        "category": "Fitness",
+        "price": 1200,
+        "rating": 4.8
+    },
+    {
+        "name": "Gold Necklace",
+        "description": "Elegant gold necklace with traditional Indian design",
+        "category": "Jewelry",
+        "price": 30000,
+        "rating": 4.9
+    },
+    {
+        "name": "Mysore Sandal Soap",
+        "description": "Famous sandalwood soap from Mysore, Karnataka",
+        "category": "Beauty & Personal Care",
+        "price": 50,
+        "rating": 4.2
+    },
+    {
+        "name": "Cricket Ball",
+        "description": "Durable leather cricket ball for matches and practice",
+        "category": "Sports",
+        "price": 300,
+        "rating": 4.4
+    },
+    {
+        "name": "Ganesh Idol",
+        "description": "Handcrafted Ganesh idol for religious ceremonies and home decor",
+        "category": "Home Decor",
+        "price": 500,
+        "rating": 4.6
+    }
+]
+
+WMQ to dispaly all the products whose rating is greater than 4 and price is in between 400 to 700. 
+
+db.Products.find({"rating":{$gt:4}, "price":{$gt:400,$lt:2000}})
+[
+  {
+    _id: ObjectId('66120b5e6613c1c9be9fa1aa'),
+    name: 'Yoga Mat',
+    description: 'Premium-quality yoga mat for daily practice and meditation',
+    category: 'Fitness',
+    price: 1200,
+    rating: 4.8
+  },
+  {
+    _id: ObjectId('66120b5e6613c1c9be9fa1ae'),
+    name: 'Ganesh Idol',
+    description: 'Handcrafted Ganesh idol for religious ceremonies and home decor',
+    category: 'Home Decor',
+    price: 500,
+    rating: 4.6
+  }
+]
+
+
+WMQ display all the book whose price is in between 200 to 400  or is_avaiable false
+
+
+db.books.find({$or:[{"price" : {$gt:200, $lt:400}},{is_available:false}]})
+
+
+conside these data 
+
+odisha.json
+------------
+[
+    {
+        "category": "Art",
+        "items": [
+            {
+                "name": "Pattachitra Painting",
+                "description": "Hand-painted traditional art form from Odisha depicting mythological themes",
+                "price": 2500,
+                "rating": 4.8
+            },
+            {
+                "name": "Silver Filigree Jewelry",
+                "description": "Intricately designed silver jewelry crafted using the filigree technique from Cuttack, Odisha",
+                "price": 5000,
+                "rating": 4.9
+            }
+        ]
+    },
+    {
+        "category": "Cuisine",
+        "items": [
+            {
+                "name": "Rasagola",
+                "description": "Famous sweet dish from Odisha made of cottage cheese and sugar syrup",
+                "price": 200,
+                "rating": 4.6
+            },
+            {
+                "name": "Chhena Poda",
+                "description": "Delicious baked dessert from Odisha made with cottage cheese, sugar, and cardamom",
+                "price": 300,
+                "rating": 4.7
+            }
+        ]
+    },
+    {
+        "category": "Landmarks",
+        "items": [
+            {
+                "name": "Konark Sun Temple",
+                "description": "Ancient Hindu temple dedicated to the sun god, known for its architectural grandeur",
+                "location": "Konark",
+                "rating": 4.9
+            },
+            {
+                "name": "Jagannath Temple",
+                "description": "Famous Hindu temple dedicated to Lord Jagannath, located in Puri",
+                "location": "Puri",
+                "rating": 4.8
+            }
+        ]
+    },
+    {
+        "category": "Culture",
+        "items": [
+            {
+                "name": "Odissi Dance",
+                "description": "Classical dance form originating from Odisha, known for its expressive movements",
+                "rating": 4.7
+            },
+            {
+                "name": "Ratha Yatra",
+                "description": "Annual chariot festival celebrated in Puri, featuring a grand procession of temple deities",
+                "rating": 4.9
+            }
+        ]
+    }
+]
+
+WMQ display all the records whoe category is Culture and rating greater than 4.8
+
+db.odisha.find({"category":"Culture"},{"items.rating":{$gt:4.8}})
+
+
+
+
+db.odisha.find({$and:[{"category":"Culture"},{"items.rating":{$gt:4.2}}]})
+
+db.odisha.find({"category":"Culture","items.rating":{$gt:4.2}})
+
+
+mark in between 60 to 70 
+
+db.marks.find({"mark":{$gt:60},"mark":{$lt:70}})
+
+
+

@@ -195,4 +195,4 @@ for compass:  {"yop": { $gt:1994,$lt:2002}}
 ![alt text](Images/04roadmapfullstack.png)
 
 
-(9)WMQ to display all the names based on yop.
+(7)WMQ to display all the names based on yop.
