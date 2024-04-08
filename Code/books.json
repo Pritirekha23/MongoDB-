@@ -1,0 +1,80 @@
+[
+    {
+        "title": "Bhagavad Gita",
+        "author": "Vyasa",
+        "language": "Sanskrit",
+        "publication_year": 200,
+        "price": 350,
+        "is_available": true,
+        "details": {
+            "pages": 856,
+            "publisher": "GITA Press"
+        },
+        "tags": ["Hinduism", "Philosophy", "Spirituality"],
+        "description": null,
+        "weight_kg": {"$numberDecimal": "0.3"}
+    },
+    {
+        "title": "Mahabharata",
+        "author": "Vyasa",
+        "language": "Sanskrit",
+        "publication_year": 400,
+        "price": 450,
+        "is_available": true,
+        "details": {
+            "pages": 2000,
+            "publisher": "Vedic Publications"
+        },
+        "tags": ["Hinduism", "Epic", "Mythology"],
+        "description": "An ancient Indian epic depicting the Kurukshetra War and the teachings of Krishna to Arjuna.",
+        "edition": "1st Edition",
+        "weight_kg": {"$numberDecimal": "1.5"}
+    },
+    {
+        "title": "Upanishads",
+        "author": "Various",
+        "language": "Sanskrit",
+        "publication_year": 100,
+        "price": 300,
+        "is_available": true,
+        "details": {
+            "pages": 500,
+            "publisher": "Vedanta Publications"
+        },
+        "tags": ["Hinduism", "Philosophy", "Spirituality"],
+        "description": null,
+        "weight_kg": {"$numberDecimal": "0.8"}
+    },
+    {
+        "title": "Ramayana",
+        "author": "Valmiki",
+        "language": "Sanskrit",
+        "publication_year": 300,
+        "price": 400,
+        "is_available": true,
+        "details": {
+            "pages": 1200,
+            "publisher": "Sacred Texts Publishing"
+        },
+        "tags": ["Hinduism", "Epic", "Mythology"],
+        "description": "A Sanskrit epic narrating the life of Prince Rama and his quest to rescue his wife Sita from the demon king Ravana.",
+        "edition": "2nd Edition",
+        "weight_kg": {"$numberDecimal": "1.2"}
+    },
+    {
+        "title": "Yoga Sutras",
+        "author": "Patanjali",
+        "language": "Sanskrit",
+        "publication_year": 150,
+        "price": 250,
+        "is_available": true,
+        "details": {
+            "pages": 200,
+            "publisher": "Yoga Wisdom Books"
+        },
+        "tags": ["Hinduism", "Yoga", "Philosophy"],
+        "description": "An ancient Indian text on the practice of yoga and meditation.",
+        "edition": "3rd Edition",
+        "weight_kg": {"$numberDecimal": "0.2"}
+    }
+]
