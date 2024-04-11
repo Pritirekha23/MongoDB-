@@ -1,0 +1,157 @@
+[
+  {
+    "title": "Bahubali: The Beginning",
+    "year": "2015",
+    "tags": ["Action", "Drama"],
+    "ratings": [7, 6, 6, 6, 6, 7],
+    "contentRating": "PG-13",
+    "duration": "5",
+    "releaseDate": "2015-07-10",
+    "averageRating": 6,
+    "originalTitle": "బాహుబలి: దయము",
+    "storyline": "In ancient India, a warrior prince rises to power and avenges his father's death.",
+    "actors": [
+      "Prabhas",
+      "Rana Daggubati",
+      "Anushka Shetty"
+    ],
+    "imdbRating": 8.0,
+    "author": {
+      "name": "S.S. Rajamouli",
+      "age": 47,
+      "address": {
+        "street": "Road No. 12, Banjara Hills",
+        "city": "Hyderabad",
+        "country": "India"
+      },
+      "netWorthDetails": {
+        "netWorth": "$20 million",
+        "sourceOfWealth": "Film direction"
+      }
+    }
+  },
+  {
+    "title": "Bajrangi Bhaijaan",
+    "year": "2015",
+    "tags": ["Comedy", "Drama"],
+    "ratings": [8, 7, 6, 7, 7, 8],
+    "contentRating": "PG",
+    "duration": "9",
+    "releaseDate": "2015-07-17",
+    "averageRating": 7,
+    "originalTitle": "बाजरंगी भाईजान",
+    "storyline": "An Indian man with a magnanimous heart takes a young mute Pakistani girl back to her homeland to reunite her with her family.",
+    "actors": [
+      "Salman Khan",
+      "Harshaali Malhotra",
+      "Kareena Kapoor"
+    ],
+    "imdbRating": 8.1,
+    "author": {
+      "name": "Kabir Khan",
+      "age": 50,
+      "address": {
+        "street": "10, Versova, Andheri West",
+        "city": "Mumbai",
+        "country": "India"
+      },
+      "netWorthDetails": {
+        "netWorth": "$15 million",
+        "sourceOfWealth": "Film direction"
+      }
+    }
+  },
+  {
+    "title": "PK",
+    "year": "2014",
+    "tags": ["Comedy", "Drama"],
+    "ratings": [8, 8, 8, 8, 8, 8],
+    "contentRating": "PG-13",
+    "duration": "3",
+    "releaseDate": "2014-12-19",
+    "averageRating": 8,
+    "originalTitle": "पीक",
+    "storyline": "An alien on Earth loses his spaceship and must learn to live on the planet, while searching for his lost remote.",
+    "actors": [
+      "Aamir Khan",
+      "Anushka Sharma",
+      "Sushant Singh Rajput"
+    ],
+    "imdbRating": 8.2,
+    "author": {
+      "name": "Rajkumar Hirani",
+      "age": 58,
+      "address": {
+        "street": "10, Pali Hill, Bandra West",
+        "city": "Mumbai",
+        "country": "India"
+      },
+      "netWorthDetails": {
+        "netWorth": "$30 million",
+        "sourceOfWealth": "Film direction"
+      }
+    }
+  },
+  {
+    "title": "Sultan",
+    "year": "2016",
+    "tags": ["Action", "Drama", "Sports"],
+    "ratings": [8, 7, 7, 7, 7, 7],
+    "contentRating": "PG-13",
+    "duration": "4",
+    "releaseDate": "2016-07-06",
+    "averageRating": 7,
+    "originalTitle": "सुल्तान",
+    "storyline": "A middle-aged wrestler wins a gold medal at the Commonwealth Games, but his life spirals out of control when he returns home.",
+    "actors": [
+      "Salman Khan",
+      "Anushka Sharma",
+      "Randeep Hooda"
+    ],
+    "imdbRating": 7.1,
+    "author": {
+      "name": "Ali Abbas Zafar",
+      "age": 38,
+      "address": {
+        "street": "10, Versova, Andheri West",
+        "city": "Mumbai",
+        "country": "India"
+      },
+      "netWorthDetails": {
+        "netWorth": "$12 million",
+        "sourceOfWealth": "Film direction"
+      }
+    }
+  },
+  {
+    "title": "Padmaavat",
+    "year": "2018",
+    "tags": ["Drama", "History"],
+    "ratings": [7, 7, 7, 7, 7, 7],
+    "contentRating": "PG-13",
+    "duration": "6",
+    "releaseDate": "2018-01-25",
+    "averageRating": 7,
+    "originalTitle": "पद्मावत",
+    "storyline": "Set in medieval Rajasthan, Queen Padmavati is married to a noble king and they live in a prosperous fortress with their subjects until an ambitious Sultan hears of Padmavati's beauty and forms an obsession over her.",
+    "actors": [
+      "Deepika Padukone",
+      "Shahid Kapoor",
+      "Ranveer Singh"
+    ],
+    "imdbRating": 7.0,
+    "author": {
+      "name": "Sanjay Leela Bhansali",
+      "age": 59,
+      "address": {
+        "street": "10, Pali Hill, Bandra West",
+        "city": "Mumbai",
+        "country": "India"
+      },
+      "netWorthDetails": {
+        "netWorth": "$100 million",
+        "sourceOfWealth": "Film direction"
+      }
+    }
+  }
+]

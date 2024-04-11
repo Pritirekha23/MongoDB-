@@ -1010,9 +1010,6 @@ WMQ display all the records whoe category is Culture and rating greater than 4.8
 
 db.odisha.find({"category":"Culture"},{"items.rating":{$gt:4.8}})
 
-
-
-
 db.odisha.find({$and:[{"category":"Culture"},{"items.rating":{$gt:4.2}}]})
 
 db.odisha.find({"category":"Culture","items.rating":{$gt:4.2}})
